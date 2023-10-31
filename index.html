@@ -54,14 +54,11 @@ var witgif = document.getElementById("witgif");
 var ul_list = document.getElementById("ul_list");
 var div_list = document.getElementById("div_list");
 var clo = document.getElementById("clo");
-var law = true;
-var obj = JSON.parse('{"starbucks":"https://mir-s3-cdn-cf.behance.net/project_modules/hd/da2e8612058573.56256be1b768a.png","mcdonalds":"https://seeklogo.com/images/M/mcdonald-s-logo-2325D6C1EF-seeklogo.com.png","coca cola":"https://brandlogos.net/wp-content/uploads/2022/10/coca-cola-logo_brandlogos.net_8kh4z.png"}');
+var obj = JSON.parse('{}');
+fetch('./data.json')
+    .then((response) => response.json())
+    .then((json) => obj = json);
 var search_terms = Object.keys(obj);
-function name_brands(){
-div_list.innerHTML="";
-for(key in obj){
-div_list.innerHTML+="<a href='h:///watch?v="+key+"'><img class='img_vid' src='https://i.ytimg.com/vi/"+key+"/mqdefault.jpg'/><p>"+obj[key]+"</p></a>";}
-}
 
 function srch(valu){if(valu!==""){
 witgif.src = obj[inp.value=valu];
@@ -99,8 +96,6 @@ function autocompleteMatch(input) {
 	  }
   });
 }
-fetch('./data.json')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
+
 </script>
 </body></html>
