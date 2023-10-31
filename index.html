@@ -1,4 +1,5 @@
 <html><head>
+<title>Free land</title>
     <style>
 p{
 width:auto;height:100%;
@@ -54,11 +55,10 @@ var witgif = document.getElementById("witgif");
 var ul_list = document.getElementById("ul_list");
 var div_list = document.getElementById("div_list");
 var clo = document.getElementById("clo");
-var obj = JSON.parse('{}');
+var obj = search_terms = [];
 fetch('./data.json')
     .then((response) => response.json())
-    .then((json) => obj = json);
-var search_terms = Object.keys(obj);
+    .then((json) => search_terms = Object.keys(obj = json));
 
 function srch(valu){if(valu!==""){
 witgif.src = obj[inp.value=valu];
