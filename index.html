@@ -1,17 +1,5 @@
 <html><head>
     <style>
-a{
-    position: relative;
-    display: block;
-    width: 100%;
-    margin-bottom: 1%;
-    height: 22vw;
-    border-radius: 4vw;
-    text-decoration: none;
-    cursor: default;
-    color: #fff;
-    overflow: hidden;
-}
 p{
 width:auto;height:100%;
 margin:0;
@@ -30,41 +18,87 @@ padding: 3vw 6vw;
 height: 6vw;
 font-size: 6vw;
 }
-#witgif{width:100%;height:auto;position:fixed;top:50%;transform:translate(0%,-50%);}
+#witgif{display:none;width:50%;height:auto;position:fixed;top:50%;transform:translate(50%,-50%);}
 </style>
 </head>
-<body style="-webkit-user-select: none; background: #fff; height: 100%; margin: 0; width: 100%;">
-<div id="div_list" style="margin-top: 16vw; overflow: hidden;">
-    <img id="witgif" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLQCZPim4kRxd5TPwoh6d18bH8JvPbuCyImgF96dAwxwfuTftFf6qv9mnppk9ZUOWrARf6jdVZ-aRG8j8G3m1Wj-szxZgXl6jO9Dq75PjY20M71H-eRMSZYfduSBwBeXYGZYEUUB-K8URxSS6-YmLsPAf1VgOqI27aNp_n38qLJp01yq4I7cYlpR3zwgw/s1600/oie_XNgmu5SF4ScM.gif" />
+<body style="background:#fff;-webkit-user-select:none;margin:0;width:100%;height:100%;">
+<div style="overflow:hidden;margin-top: 16vw;" id="div_list">
+    <img style="width:100%;height:auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLQCZPim4kRxd5TPwoh6d18bH8JvPbuCyImgF96dAwxwfuTftFf6qv9mnppk9ZUOWrARf6jdVZ-aRG8j8G3m1Wj-szxZgXl6jO9Dq75PjY20M71H-eRMSZYfduSBwBeXYGZYEUUB-K8URxSS6-YmLsPAf1VgOqI27aNp_n38qLJp01yq4I7cYlpR3zwgw/s1600/oie_XNgmu5SF4ScM.gif">
+	<a href=""><center><h1 style="font-size:xxx-large;">GROUP</h1></center></a>
 </div>
-<div id="clo" onclick="this.style.height='0';ul_list.style.display='none';" style="background-color: rgba(0, 0, 0, 0.5); height: 0px; position: fixed; top: 0px; touch-action: none;"><div style="background-color: white; height: 16vw; width: 100vw;"></div>
-    <div style="background-color: white; border-radius: 6vw; box-shadow: 0 1vw 2vw 0 #00000050; display: block; margin: 2vw; overflow: hidden; position: fixed; top: 0; width: 96vw;">
-        <img onclick="srch(inp.value)" src="https://cdn-icons-png.flaticon.com/512/54/54481.png" style="float: right; height: 12vw; width: 12vw;" /><input id="inp" onclick="clo.style.height='100vh';ul_list.style.display='block';event.stopPropagation()" onkeyup="myFunction()" placeholder="Search..." style="border: none; font-size: 6vw; height: 6vw; outline: none; padding: 3vw 0vw 3vw 6vw; width: 78vw;" type="text" />
-        <ul id="ul_list" style="display: none; list-style-type: none; margin: 0px; padding: 0px;"></ul>
+<div style="position: fixed; top: 0px; 
+background-color: rgba(0, 0, 0, 0.5); touch-action: none; height: 0px;" id="clo" onclick="this.style.height='0';ul_list.style.display='none';witgif.style.display='none';">
+<div
+style="
+width: 100vw;
+height: 16vw;
+background-color:white;
+"></div>
+    <div style="
+    border-radius: 6vw;
+    margin: 2vw;
+    overflow: hidden;
+    box-shadow: 0 1vw 2vw 0 #00000050;
+    top: 0;display:block;
+    position: fixed;
+    background-color: white;
+">
+   <input type="text" id="inp" style="width: 96vw; height: 12vw; font-size: 6vw; border: none; padding: 3vw 0vw 3vw 6vw; outline: none;" placeholder="Brands related to Israel ...">
+        <ul id="ul_list" onclick="this.style.display='none';event.stopPropagation();" style="list-style-type: none; padding: 0px; margin: 0px; display: none;"></ul>
     </div>
+	<img id="witgif">
 </div>
 <script>
 var inp = document.getElementById("inp");
+var witgif = document.getElementById("witgif");
 var ul_list = document.getElementById("ul_list");
 var div_list = document.getElementById("div_list");
 var clo = document.getElementById("clo");
 var law = true;
-function list_video(txt){
-var obj = JSON.parse(txt);
+var obj = JSON.parse('{"starbucks":"https://mir-s3-cdn-cf.behance.net/project_modules/hd/da2e8612058573.56256be1b768a.png","mcdonalds":"https://seeklogo.com/images/M/mcdonald-s-logo-2325D6C1EF-seeklogo.com.png","coca cola":"https://brandlogos.net/wp-content/uploads/2022/10/coca-cola-logo_brandlogos.net_8kh4z.png"}');
+var search_terms = Object.keys(obj);
+function name_brands(){
 div_list.innerHTML="";
 for(key in obj){
 div_list.innerHTML+="<a href='h:///watch?v="+key+"'><img class='img_vid' src='https://i.ytimg.com/vi/"+key+"/mqdefault.jpg'/><p>"+obj[key]+"</p></a>";}
-window.scrollTo(0,0);}
-function list_ul(ul){ul_list.innerHTML=ul;}
-function srch(valu){if(valu!==""){div_list.innerHTML="<img id='witgif' src='wit_io.gif'/>";
-law = true;confirm("/results?sp=EgIQAQ&search_query="+encodeURIComponent(inp.value=valu));}}
-inp.addEventListener("keyup",function(event){
-  if(event.keyCode===13){
-  srch(inp.value);inp.blur()
-  clo.style.height='0';ul_list.style.display='none';
-  }});
+}
+
+function srch(valu){if(valu!==""){
+witgif.src = obj[inp.value=valu];
+clo.style.height='100vh';
+ul_list.innerHTML="";
+witgif.style.display='block';
+}}
+
 inp.addEventListener("input",function(){
-  if(inp.value==="")ul_list.innerHTML="";alert(inp.value);
+  if(inp.value==="")ul_list.innerHTML="";
+  let list = '';var limt_c=10;
+  let terms = autocompleteMatch(inp.value.toLowerCase());
+  if(terms.length<10)limt_c=terms.length;
+  for (i=0; i<limt_c; i++) {
+    list += '<li onclick="srch(this.textContent)">' + terms[i] + '</li>';
+  }
+  ul_list.innerHTML =list;
 });
+
+inp.addEventListener("click",function(){
+  clo.style.height='100vh';
+  ul_list.style.display='block';
+  witgif.style.display='none';
+  event.stopPropagation();
+});
+
+function autocompleteMatch(input) {
+  if (input == '') {
+    return [];
+  }
+  var reg = new RegExp(input)
+  return search_terms.filter(function(term) {
+	  if (term.match(reg)) {
+  	  return term;
+	  }
+  });
+}
+
 </script>
 </body></html>
