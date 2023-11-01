@@ -1,14 +1,9 @@
 <html><head>
 <title>Free land</title>
     <style>
-p{
-width:auto;height:100%;
-margin:0;
-display:flex;
-align-items:center;
-font-size: 5vw;
-padding: 0 3vw;
-background-color:#282828;}
+body{
+font-family: sans-serif;
+}
 .img_vid{
 height:100%;
 float:left;
@@ -24,8 +19,14 @@ font-size: 6vw;
 </head>
 <body style="background:#fff;-webkit-user-select:none;margin:0;width:100%;height:100%;">
 <div style="overflow:hidden;margin-top: 16vw;" id="div_list">
-    <img style="width:100%;height:auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLQCZPim4kRxd5TPwoh6d18bH8JvPbuCyImgF96dAwxwfuTftFf6qv9mnppk9ZUOWrARf6jdVZ-aRG8j8G3m1Wj-szxZgXl6jO9Dq75PjY20M71H-eRMSZYfduSBwBeXYGZYEUUB-K8URxSS6-YmLsPAf1VgOqI27aNp_n38qLJp01yq4I7cYlpR3zwgw/s1600/oie_XNgmu5SF4ScM.gif">
-	<a href=""><center><h1 style="font-size:xxx-large;">GROUP</h1></center></a>
+    <img style="width:100%;height:auto;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhB8NhftlXHj2N3aarypUMJHTzB8ogRWiOijRAdMLFVziJUU79XQTg8XoFQvEK8E8Ty_Ryc7qPapw9FzY6zH4NKzAdXt-O0-0Nl9nTJ6WpH082Lc-sUJtmGlCr1Gy94KoSBpQJ4WfBu1b4SRvK0tOkz6w4iP8YuubZNiP73J0UvXI5vvjvD_U1T8Oo4Ydo/s320/oie_MbP8dbSPRbO3.gif">
+	<pre style="font-size:xxx-large;text-align:right;margin-bottom:0px;">
+تريد اضافة أي علامات تجارية اسرائل أو تدعمها .
+تريد مشاركة في غلاق حسابات اسرائل أو تدعمها .
+عندك اقترحات أو خدع لدعم المحتوى الفلسطين .
+انضم للمجموعة .</pre>
+<center><a href="" style="font-size:60px;color:black;"><span style="color:#007a2d">الأرض</span><span style="color:#ce1115;"> الحرة</span></a></center>
+
 </div>
 <div style="position: fixed; top: 0px; 
 background-color: rgba(0, 0, 0, 0.5); touch-action: none; height: 0px;" id="clo" onclick="this.style.height='0';ul_list.style.display='none';witgif.style.display='none';">
@@ -44,7 +45,7 @@ background-color:white;
     position: fixed;
     background-color: white;
 ">
-   <input type="text" id="inp" style="width: 96vw; height: 12vw; font-size: 6vw; border: none; padding: 3vw 0vw 3vw 6vw; outline: none;" placeholder="Brands related to Israel ...">
+   <input type="text" id="inp" style="width: 96vw; height: 12vw; font-size: 6vw; border: none; padding: 3vw 0vw 3vw 6vw; outline: none;" placeholder="Brands related to Ǐѕrае|">
         <ul id="ul_list" onclick="this.style.display='none';event.stopPropagation();" style="list-style-type: none; padding: 0px; margin: 0px; display: none;"></ul>
     </div>
 	<img id="witgif">
@@ -60,12 +61,16 @@ fetch('./data.json')
     .then((response) => response.json())
     .then((json) => search_terms = Object.keys(obj = json));
 
-function srch(valu){if(valu!==""){
-witgif.src = obj[inp.value=valu];
+function srch(valu){
 clo.style.height='100vh';
+if(valu!==""){
+witgif.src = obj[inp.value=valu];
 ul_list.innerHTML="";
 witgif.style.display='block';
-}}
+}else{
+  witgif.style.display='none';
+}
+}
 
 inp.addEventListener("input",function(){
   if(inp.value==="")ul_list.innerHTML="";
@@ -79,9 +84,8 @@ inp.addEventListener("input",function(){
 });
 
 inp.addEventListener("click",function(){
-  clo.style.height='100vh';
   ul_list.style.display='block';
-  witgif.style.display='none';
+  srch(inp.value);
   event.stopPropagation();
 });
 
