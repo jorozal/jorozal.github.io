@@ -4,7 +4,7 @@
 	var div_list = document.getElementById("div_list");
 	var clo = document.getElementById("clo");
 	var obj = search_terms = [];
-	fetch('https://jorozal.github.io/data.json')
+	fetch('./data.json')
 		.then((response) => response.json())
 		.then((json) => search_terms = Object.keys(obj = json));
 
