@@ -4,13 +4,13 @@
 	var div_list = document.getElementById("div_list");
 	var clo = document.getElementById("clo");
 	var obj = search_terms = [];
-	fetch('./data.json')
+	fetch('https://jorozal.github.io/data.json')
 		.then((response) => response.json())
 		.then((json) => search_terms = Object.keys(obj = json));
 
 	function srch(valu){
 	clo.style.height='100vh';
-	if(valu!==""){
+	if(search_terms.includes(valu)){
 	witgif.src = obj[inp.value=valu];
 	ul_list.innerHTML="";
 	witgif.style.display='block';
