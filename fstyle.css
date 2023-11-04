@@ -42,17 +42,17 @@ ul{
 #clo{
 	position: fixed;
 	top: 0px; 
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: #ffffffb3;
 	touch-action: none; 
 	height: 0px;
 }
 #witgif{
 	display:none;
-	width:50%;
+	width:80%;
 	height:auto;
 	position:fixed;
 	top:50%;
-	transform:translate(50%,-50%);
+	transform:translate(12%,-50%);
 }
 #inp{
 	width: 96vw;
