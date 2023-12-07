@@ -4,7 +4,7 @@
 <body>
   <script>
     const searchParams = new URLSearchParams(window.location.search);
-    if (url.searchParams.has('name')) {
+    if (searchParams.has('name')) {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTaCsSgDz__qS5YbQsRVJYe3_dQnhdASPXtY8vCF6_rrfM7DjYF-1Jug1DkqKUcsTB/exec?name='+searchParams.get('name');
 fetch (scriptURL)
 .then(response => alert("thank you!"))
