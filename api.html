@@ -6,10 +6,9 @@
     const searchParams = new URLSearchParams(window.location.search);
     if (searchParams.has('name')) {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTaCsSgDz__qS5YbQsRVJYe3_dQnhdASPXtY8vCF6_rrfM7DjYF-1Jug1DkqKUcsTB/exec?name='+searchParams.get('name');
-fetch (scriptURL)
-.then(response => {document.body.innerText="ok";alert("thank you!")})
-.then(() => {window.location.assign("/api.html");});
+fetch (scriptURL).then(response =>{window.location.assign("/api.html");});
     }
+    document.body.innerText="ok";
   </script>
 </body>
 </html>
