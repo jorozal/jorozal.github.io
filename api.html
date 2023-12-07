@@ -7,8 +7,8 @@
     if (searchParams.has('name')) {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTaCsSgDz__qS5YbQsRVJYe3_dQnhdASPXtY8vCF6_rrfM7DjYF-1Jug1DkqKUcsTB/exec?name='+searchParams.get('name');
 fetch (scriptURL)
-.then(response => alert("thank you!"))
-.then(() => {window.location.reload();});
+.then(response => {document.body.innerText="ok";alert("thank you!")})
+.then(() => {window.location.assign("/api.html");});
     }
   </script>
 </body>
