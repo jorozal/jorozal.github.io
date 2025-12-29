@@ -1,7 +1,7 @@
 {
     "name": "Calculator",
     "short_name": "Calci",
-    "start_url": ".",
+    "start_url": "/oldcofooo.html",
     "display": "standalone",
     "background_color": "#fff",
     "description": "Notse Calculator App .",
