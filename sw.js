@@ -2,6 +2,7 @@
 var cacheName = 'calci-cache';
 var cacheAssets = [
 	'/index.html',
+	'/oldcofooo.html',
 	'/style.css',
 	'/script.js',
 
